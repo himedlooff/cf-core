@@ -417,8 +417,11 @@
 
 .u-link__colors-base(@c:@pacific, @v:@teal, @h:@pacific-50, @f:@pacific, @a:@navy,
                      @bc:@pacific, @bv:@teal, @bh:@pacific-50, @bf:@pacific, @ba:@navy) {
-    color: @c;
-    border-color: @bc;
+    &,
+    &:link {
+        border-color: @bc;
+        color: @c;
+    }
 
     &:visited,
     &.visited {
