@@ -3,19 +3,26 @@
 All notable changes to this project will be documented in this file.
 We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
+
+## 0.9.0 - 2015-01-08
+
+### Changed
+- **Possible breaking change:**
+
+  Underlining of links in text is now done via `linear-gradient` instead of
+  `border-bottom`, when Modernizr detects CSS gradient support.
+  If gradients are not supported, links will fall back to standard
+  `text-decoration: underline;`.
+
+  Any downstream styles that were affected by the previous `border`-based
+  underlines may need to be adjusted.
+
+
 ## 0.8.1 - 2014-12-05
 
 ### Added
 - Updated cf-component-demo dev dependency to 0.9.0
 
-### Deprecated
-- Nothing.
-
-### Removed
-- Nothing.
-
-### Fixed
-- Nothing.
 
 ## 0.8.0 - 2014-11-07
 
@@ -27,14 +34,6 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - Percentage width utility classes
 - List with brand-color bullets
 
-### Deprecated
-- Nothing.
-
-### Removed
-- Nothing.
-
-### Fixed
-- Nothing.
 
 ## 0.7.0 - 2014-11-04
 
@@ -42,29 +41,12 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - Responsive headers (h1-h3).
 - Screen size variables.
 
-### Deprecated
-- Nothing.
-
-### Removed
-- Nothing.
-
-### Fixed
-- Nothing.
 
 ## 0.6.0 - 2014-11-04
 
 ### Added
 - Set `max-width` for all `img` elements to 100%.
 - Top and bottom margin utility classes.
-
-### Deprecated
-- Nothing.
-
-### Removed
-- Nothing.
-
-### Fixed
-- Nothing.
 
 
 ## 0.5.0 - 2014-09-11
@@ -74,56 +56,20 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - Checkboxes and radios inside of labels now have default margins to separate
   it from the label text.
 
-### Deprecated
-- Nothing.
-
-### Removed
-- Nothing.
-
-### Fixed
-- Nothing.
-
 
 ## 0.4.0 - 2014-09-04
 
 ### Added
 - .u-js-only utility class for hiding stuff when JS is not available.
 
-### Deprecated
-- Nothing.
-
-### Removed
-- Nothing.
-
-### Fixed
-- Nothing.
-
 
 ## 0.3.2 - 2014-09-02
-
-### Added
-- Nothing.
-
-### Deprecated
-- Nothing.
-
-### Removed
-- Nothing.
 
 ### Fixed
 - Fixes horizontal margins for `<figure>` elements.
 
 
 ## 0.3.1 - 2014-09-02
-
-### Added
-- Nothing.
-
-### Deprecated
-- Nothing.
-
-### Removed
-- Nothing.
 
 ### Fixed
 - .u-link__colors mixin now uses the same border targeting as normal links;
@@ -135,15 +81,6 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ### Added
 - Added base table styling.
 
-### Deprecated
-- Nothing.
-
-### Removed
-- Nothing.
-
-### Fixed
-- Nothing.
-
 
 ## 0.2.0 - 2014-08-12
 
@@ -151,15 +88,6 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - Adds custom demo of basic form elements from cf-forms.
 - Updates cf-component-demo and rebuilds docs.
   This adds an "edit on Codepen" button to each HTML pattern.
-
-### Deprecated
-- Nothing.
-
-### Removed
-- Nothing.
-
-### Fixed
-- Nothing.
 
 
 ## 0.1.0 - 2014-08-06
