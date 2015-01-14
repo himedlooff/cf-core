@@ -15,11 +15,7 @@
     <link rel="stylesheet" type="text/css" href="static/docs/brackets.css">
     <link rel="stylesheet" type="text/css" href="static/docs/docs.css">
     <link rel="stylesheet" type="text/css" href="static/css/main.css">
-    <script>
-      // Confirm availability of JS and remove no-js class from html
-      var docElement = document.documentElement;
-      docElement.className = docElement.className.replace(/(^|\s)no-js(\s|$)/, '$1$2');
-    </script>
+    <script src="static/js/modernizr-custom.js"></script>
   </head>
   <body>
     <div class="docs-sidebar-wrapper">
@@ -618,13 +614,13 @@ Compiles to:
               <footer class="docs-pattern_footer">
                 <ul class="docs-codenotes">
                   <li>
-                    <pre class="docs-code"><code>.u-link__colors(@c, @v, @h, @f, @a, @bc, @bv, @bh, @bf, @ba);</code></pre>
+                    <pre class="docs-code"><code>.u-link__colors(@c, @v, @h, @f, @a, @uc, @uv, @uh, @uf, @ua);</code></pre>
                   </li>
                 </ul>
                 <ul class="docs-notes">
-                  <li>Allows you to color text and the borders separately.</li>
-                  <li>The first five colors in 'love/hate' mnemonic order will color text for the :link, :visited, :hover, :focus, and :active states respectively. The last five colors in 'love/hate' mnemonic order will color the borders for the :link, :visited, :hover, :focus, and :active states respectively.</li>
-                  <li>Even though this mixin is basically the same as .u-link__colors-base(@c, @v, @h, @f, @a, @bc, @bv, @bh, @bf, @ba); we encourage you to use .u-link__colors(@c, @v, @h, @f, @a, @bc, @bv, @bh, @bf, @ba) to promote consistency.</li>
+                  <li>Allows you to color text and the underlines separately.</li>
+                  <li>The first five colors in 'love/hate' mnemonic order will color text for the :link, :visited, :hover, :focus, and :active states respectively. The last five colors in 'love/hate' mnemonic order will color the underlines for the :link, :visited, :hover, :focus, and :active states respectively.</li>
+                  <li>Even though this mixin is basically the same as .u-link__colors-base(@c, @v, @h, @f, @a, @uc, @uv, @uh, @uf, @ua); we encourage you to use .u-link__colors(@c, @v, @h, @f, @a, @uc, @uv, @uh, @uf, @ua) to promote consistency.</li>
                 </ul>
               </footer>
             </div>
@@ -644,11 +640,11 @@ Compiles to:
               <footer class="docs-pattern_footer">
                 <ul class="docs-codenotes">
                   <li>
-                    <pre class="docs-code"><code>.u-link__border();</code></pre>
+                    <pre class="docs-code"><code>.u-link__underline();</code></pre>
                   </li>
                 </ul>
                 <ul class="docs-notes">
-                  <li>Forces the default bottom border on the :link and :hover states.</li>
+                  <li>Forces the default underline on the :link and :hover states.</li>
                 </ul>
               </footer>
             </div>
@@ -656,11 +652,11 @@ Compiles to:
               <footer class="docs-pattern_footer">
                 <ul class="docs-codenotes">
                   <li>
-                    <pre class="docs-code"><code>.u-link__no-border();</code></pre>
+                    <pre class="docs-code"><code>.u-link__no-underline();</code></pre>
                   </li>
                 </ul>
                 <ul class="docs-notes">
-                  <li>Turn off the default bottom border on the :link and :hover states.</li>
+                  <li>Turn off the default underline on the :link and :hover states.</li>
                 </ul>
               </footer>
             </div>
@@ -668,11 +664,11 @@ Compiles to:
               <footer class="docs-pattern_footer">
                 <ul class="docs-codenotes">
                   <li>
-                    <pre class="docs-code"><code>.u-link__hover-border();</code></pre>
+                    <pre class="docs-code"><code>.u-link__hover-underline();</code></pre>
                   </li>
                 </ul>
                 <ul class="docs-notes">
-                  <li>Turn off the default bottom border on the :link state and force a bottom border on the :hover state.</li>
+                  <li>Turn off the default underline on the :link state and force a underline on the :hover state.</li>
                 </ul>
               </footer>
             </div>
@@ -700,6 +696,107 @@ Compiles to:
                 </ul>
               </footer>
             </div>
+          </div>
+          <div class="docs-css">
+            <pre class="docs-code"><code data-language="css">.u-link__border,
+.u-link__underline {
+  text-decoration: underline;
+}
+.cssgradients .u-link__border,
+.cssgradients .u-link__underline {
+  -webkit-background-size: 4px 2px;
+  background-size: 4px 2px;
+  text-decoration: none;
+}
+.u-link__no-border,
+.u-link__no-underline {
+  text-decoration: none !important;
+}
+.cssgradients .u-link__no-border,
+.cssgradients .u-link__no-underline {
+  -webkit-background-size: 0 0 !important;
+  background-size: 0 0 !important;
+}
+.u-link__hover-border,
+.u-link__hover-underline {
+  text-decoration: none !important;
+}
+.cssgradients .u-link__hover-border,
+.cssgradients .u-link__hover-underline {
+  -webkit-background-size: 0 0 !important;
+  background-size: 0 0 !important;
+}
+.u-link__hover-border:hover,
+.u-link__hover-underline:hover,
+.u-link__hover-border.hover,
+.u-link__hover-underline.hover,
+.u-link__hover-border:focus,
+.u-link__hover-underline:focus,
+.u-link__hover-border.focus,
+.u-link__hover-underline.focus {
+  text-decoration: underline !important;
+}
+.cssgradients .u-link__hover-border:hover,
+.cssgradients .u-link__hover-underline:hover,
+.cssgradients .u-link__hover-border.hover,
+.cssgradients .u-link__hover-underline.hover,
+.cssgradients .u-link__hover-border:focus,
+.cssgradients .u-link__hover-underline:focus,
+.cssgradients .u-link__hover-border.focus,
+.cssgradients .u-link__hover-underline.focus {
+  -webkit-background-size: 4px 2px !important;
+  background-size: 4px 2px !important;
+  text-decoration: none !important;
+}</code></pre>
+          </div>
+        </div>
+        <div id="breaking-link-underlines-mixin" class="docs-component">
+          <h2 class="docs-component_header"><span>Breaking link underlines mixin</span></h2>
+          <div class="docs-patterns">
+            <div class="docs-pattern">
+              <section class="docs-pattern_pattern">
+<p class="u-break-underlines">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore
+    <a href="#">magna aliqua</a>. Ut enim ad, minim veniam quis nostrud
+    exercitation ullamco laboris nisi ut
+    <i><a href="#">aliquip ex</a></i> ea commodo consequat.
+    Duis aute irure dolor in <b><a href="#">reprehenderit</a></b>
+    in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+</p>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;p class=&quot;u-break-underlines&quot;&gt;
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore
+    &lt;a href=&quot;#&quot;&gt;magna aliqua&lt;/a&gt;. Ut enim ad, minim veniam quis nostrud
+    exercitation ullamco laboris nisi ut
+    &lt;i&gt;&lt;a href=&quot;#&quot;&gt;aliquip ex&lt;/a&gt;&lt;/i&gt; ea commodo consequat.
+    Duis aute irure dolor in &lt;b&gt;&lt;a href=&quot;#&quot;&gt;reprehenderit&lt;/a&gt;&lt;/b&gt;
+    in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+&lt;/p&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-core/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;p class=\&amp;quot;u-break-underlines\&amp;quot;&gt;\n    Lorem ipsum dolor sit amet, consectetur adipisicing elit,\n    sed do eiusmod tempor incididunt ut labore et dolore\n    &lt;a href=\&amp;quot;#\&amp;quot;&gt;magna aliqua&lt;/a&gt;. Ut enim ad, minim veniam quis nostrud\n    exercitation ullamco laboris nisi ut\n    &lt;i&gt;&lt;a href=\&amp;quot;#\&amp;quot;&gt;aliquip ex&lt;/a&gt;&lt;/i&gt; ea commodo consequat.\n    Duis aute irure dolor in &lt;b&gt;&lt;a href=\&amp;quot;#\&amp;quot;&gt;reprehenderit&lt;/a&gt;&lt;/b&gt;\n    in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n&lt;/p&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+                <ul class="docs-codenotes">
+                  <li>
+                    <pre class="docs-code"><code>.u-breaking-link-underlines(@background-color);</code></pre>
+                  </li>
+                </ul>
+                <ul class="docs-notes">
+                  <li>Add this mixin to a container to give all of its descendant links a text shadow that simulates the effect of the link's underline breaking around descenders.</li>
+                  <li>The @background-color argument defaults to white, which is likely to be the most common scenario. If tour text is on a different background color, pass that color as a parameter to the mixin.</li>
+                  <li>When you're confident that text will always be on a white background, you can use the simple .u-break-underlines class.</li>
+                </ul>
+              </footer>
+            </div>
+          </div>
+          <div class="docs-css">
+            <pre class="docs-code"><code data-language="css">.u-break-underlines a {
+  text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
+}</code></pre>
           </div>
         </div>
         <div id="margin-utilities" class="docs-component">
@@ -1612,7 +1709,7 @@ figure {
           <h2 class="docs-component_header"><span>Default link</span></h2>
           <div class="docs-component_intro">
             <ul class="docs-notes">
-              <li>Note that the .visited, .hover, .focus, .active classes are for demonstration purposes only and should not  be used in production.</li>
+              <li>Note that the .visited, .hover, .focus, .active classes are for demonstration purposes only and should not be used in production.</li>
             </ul>
           </div>
           <div class="docs-patterns">
@@ -1689,33 +1786,56 @@ figure {
           </div>
           <div class="docs-css">
             <pre class="docs-code"><code data-language="css">a {
-  border-width: 0;
-  border-style: dotted;
-  border-color: #0072ce;
   color: #0072ce;
   text-decoration: none;
 }
+.cssgradients a {
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 114, 206, 0.5)), to(transparent));
+  background-image: -webkit-linear-gradient(left, rgba(0, 114, 206, 0.5) 2px, transparent 2px);
+  background-image: linear-gradient(to right, rgba(0, 114, 206, 0.5) 2px, transparent 2px);
+  background-repeat: repeat-x;
+  background-position: 0 1.0625em;
+  -webkit-background-size: 0;
+  background-size: 0;
+}
 a:visited,
 a.visited {
-  border-color: #005e5d;
   color: #005e5d;
+}
+.cssgradients a:visited,
+.cssgradients a.visited {
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 94, 93, 0.5)), to(transparent));
+  background-image: -webkit-linear-gradient(left, rgba(0, 94, 93, 0.5) 2px, transparent 2px);
+  background-image: linear-gradient(to right, rgba(0, 94, 93, 0.5) 2px, transparent 2px);
 }
 a:hover,
 a.hover {
-  border-style: solid;
-  border-color: #7fb8e6;
   color: #7fb8e6;
+}
+.cssgradients a:hover,
+.cssgradients a.hover {
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(127, 184, 230, 0.5)));
+  background-image: -webkit-linear-gradient(left, rgba(127, 184, 230, 0.5) 2px);
+  background-image: linear-gradient(to right, rgba(127, 184, 230, 0.5) 2px);
 }
 a:focus,
 a.focus {
-  border-style: solid;
   outline: thin dotted;
+}
+.cssgradients a:focus,
+.cssgradients a.focus {
+  -webkit-background-size: 0;
+  background-size: 0;
 }
 a:active,
 a.active {
-  border-style: solid;
-  border-color: #002d72;
   color: #002d72;
+}
+.cssgradients a:active,
+.cssgradients a.active {
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 45, 114, 0.5)), to(transparent));
+  background-image: -webkit-linear-gradient(left, rgba(0, 45, 114, 0.5) 2px, transparent 2px);
+  background-image: linear-gradient(to right, rgba(0, 45, 114, 0.5) 2px, transparent 2px);
 }</code></pre>
           </div>
         </div>
@@ -1747,8 +1867,8 @@ a.active {
                   <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
                 </form>
                 <ul class="docs-notes">
-                  <li>Note that the .visited, .hover, .focus, .active classes are for demonstration purposes only and should not  be used in production.</li>
-                  <li>The underline style properties are mostly set above in the a tag. To enable the underline simply set a bottom-border-width as done here.</li>
+                  <li>Note that the .visited, .hover, .focus, .active classes are for demonstration purposes only and should not be used in production.</li>
+                  <li>The underline style properties are mostly set above in the a tag. To enable the underline, simply set the background-size (and text-decoration fallback) as done here.</li>
                 </ul>
               </footer>
             </div>
@@ -1795,7 +1915,7 @@ a.active {
                   <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
                 </form>
                 <ul class="docs-notes">
-                  <li>We're restricting link borders to links within p, li, and dd so that we don't have to override them every time we want a plain link.</li>
+                  <li>We're restricting underlines to links within p, li, and dd so that we don't have to override them every time we want a plain link.</li>
                 </ul>
               </footer>
             </div>
@@ -1855,10 +1975,21 @@ a.active {
             <pre class="docs-code"><code data-language="css">p a,
 li a,
 dd a {
-  border-bottom-width: 1px;
+  text-decoration: underline;
+}
+.cssgradients p a,
+.cssgradients li a,
+.cssgradients dd a {
+  -webkit-background-size: 4px 2px;
+  background-size: 4px 2px;
+  text-decoration: none;
 }
 nav a {
-  border-bottom-width: 0;
+  text-decoration: none;
+}
+.cssgradients nav a {
+  -webkit-background-size: 0;
+  background-size: 0;
 }</code></pre>
           </div>
         </div>
